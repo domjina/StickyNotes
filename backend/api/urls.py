@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import get_notes, create_notes
+from .views import get_notes, create_notes, note_detail
 
 urlpatterns = [
     path('notes/', get_notes, name='get_notes'),
-    path('notes/create/', create_notes, name="create_notes")
+    path('notes/create/', create_notes, name="create_notes"),
+    path('notes/<int:pk>', note_detail, name="note_detail")
 ]
